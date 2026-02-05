@@ -8,7 +8,8 @@ LISPOPTIONS := --script
 GO := go
 GOOPTIONS := run
 RUST := rustc
-RUSTOPTIONS :=
+RUSTBINARY := $(PROJECT).rust
+RUSTOPTIONS := -o $(RUSTBINARY)
 
 .PHONY: run
 run: runpy runlisp rungo runrust runerlang runj runk
@@ -33,6 +34,7 @@ runrust: $(PROJECT).rs
 	@echo
 	@echo Running $(PROJECT).rs
 	$(RUST) $(RUSTOPTIONS) $(PROJECT).rs
+	./$(RUSTBINARY)
 
 runerlang: $(PROJECT).erl
 	@echo
@@ -44,5 +46,5 @@ runj:
 runk:
 
 clean:
-	@echo Remove erlang-generated binary
-	rm $(PROJECT)  
+	@echo Remove rust binary
+	rm $(RUSTBINARY)
