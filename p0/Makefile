@@ -7,6 +7,8 @@ LISP := sbcl
 LISPOPTIONS := --script
 GO := go
 GOOPTIONS := run
+RUST := rustc
+RUSTOPTIONS :=
 
 .PHONY: run
 run: runpy runlisp rungo runrust runerlang runj runk
@@ -27,11 +29,20 @@ rungo: $(PROJECT).go
 	@echo Running $(PROJECT).go
 	$(GO) $(GOOPTIONS) $(PROJECT).go
 
-runrust:
+runrust: $(PROJECT).rs
+	@echo
+	@echo Running $(PROJECT).rs
+	$(RUST) $(RUSTOPTIONS) $(PROJECT).rs
 
-runerlang:
+runerlang: $(PROJECT).erl
+	@echo
+	@echo Running $(PROJECT).erl
+	./$(PROJECT).erl
 
 runj:
 
 runk:
 
+clean:
+	@echo Remove erlang-generated binary
+	rm $(PROJECT)  
