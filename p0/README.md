@@ -1,3 +1,4 @@
+Just run make to execute all versions
 
 https://projecteuler.net/problem=1
 
