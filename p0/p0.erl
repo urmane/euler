@@ -11,5 +11,5 @@ calc(X) when (X*X) rem 2 > 0  -> (X * X) + calc(X-1).
 
 main(_) ->
     Total = calc(857000),
-    io:fwrite("Total is ~w~n", [Total]).
+    io:fwrite("Problem0 answer is ~w~n", [Total]).
 

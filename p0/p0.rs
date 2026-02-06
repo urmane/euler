@@ -5,5 +5,5 @@ fn main() {
 	    total += i * i;
 	}
     }
-    println!("Total is {}", total);
+    println!("Problem0 answer is {}", total);
 }

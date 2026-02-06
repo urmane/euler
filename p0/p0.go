@@ -10,5 +10,5 @@ func main() {
             total += n
 	}
     }
-    fmt.Printf("Total is %d\n", total)
+    fmt.Printf("Problem0 answer is %d\n", total)
 }

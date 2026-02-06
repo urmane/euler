@@ -6,7 +6,7 @@ def main() -> int:
         n = i * i
         if ( n % 2 != 0):
           total += n
-    print(f"Total is {total}")
+    print(f"Problem0 answer is {total}")
     return 0
 
 if __name__ == '__main__':
